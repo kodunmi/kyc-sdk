@@ -41,6 +41,10 @@ import react from "@vitejs/plugin-react";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
+import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
+import rollupNodePolyFill from "rollup-plugin-node-polyfills";
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import path from "path";
 
 const sharedConfig: UserConfig = {
@@ -66,6 +70,7 @@ export default defineConfig(({ command }) => {
       ...sharedConfig,
       define: {
         "process.env.NODE_ENV": '"development"',
+        global: "globalThis",
       },
       server: {
         open: true,
@@ -83,11 +88,38 @@ export default defineConfig(({ command }) => {
     return {
       ...sharedConfig,
       plugins: [
+        react(),
         dts({
           insertTypesEntry: true,
         }),
         cssInjectedByJsPlugin(),
+        nodePolyfills({
+          globals: {
+            Buffer: true, // can also be 'build', 'dev', or false
+            global: true,
+            process: true,
+          },
+          overrides: {
+            fs: "memfs",
+          },
+          protocolImports: true,
+        }),
       ],
+
+      optimizeDeps: {
+        esbuildOptions: {
+          define: {
+            global: "globalThis",
+          },
+          plugins: [
+            NodeGlobalsPolyfillPlugin({
+              process: true,
+              buffer: true,
+            }),
+            NodeModulesPolyfillPlugin(),
+          ],
+        },
+      },
       build: {
         lib: {
           entry: resolve(__dirname, "src/index.tsx"),
@@ -104,6 +136,7 @@ export default defineConfig(({ command }) => {
             },
             assetFileNames: "assets/[name][extname]",
           },
+          // plugins: [rollupNodePolyFill({})],
         },
       },
     };

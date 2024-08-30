@@ -23,4 +23,5 @@
   },
   "include": ["src", "src/types/images.d.ts", "**/*.ts", "**/*.tsx"],
   // "references": [{ "path": "./tsconfig.node.json" }]
+  "types": ["vite/client"]
 }

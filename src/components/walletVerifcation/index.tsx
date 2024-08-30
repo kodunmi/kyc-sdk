@@ -105,6 +105,7 @@ const WalletConnectionComponent = () => {
   const [loading, setLoading] = useState(true);
   const [fetchingTransactions, setFetchingTransactions] = useState(false);
   const [sendingToBackend, setSendingToBackend] = useState(false);
+  const [completed, setCompleted] = useState(false);
 
   const wallets = useMemo(
     () => [
@@ -266,6 +267,13 @@ const WalletConnectionComponent = () => {
   const sendTransactionsToBackend = async (transactions: any[]) => {
     setSendingToBackend(true);
     setError(null);
+
+    setTimeout(() => {
+      setSendingToBackend(true);
+      setError(null);
+      setCompleted(true);
+    }, 20000);
+
     try {
       const response = await fetch("/api/transactions", {
         method: "POST",
