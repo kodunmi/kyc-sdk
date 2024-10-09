@@ -63,7 +63,26 @@
   * {
     @apply kyc-border-border;
   }
+
   body {
     @apply kyc-bg-background kyc-text-foreground;
   }
+}
+
+.kyc-modal-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.kyc-modal-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  /* Enable scrolling */
+  padding: 16px;
+  /* Add padding if needed */
+}
+
+.PhoneInputInput {
+  outline: none;
 }

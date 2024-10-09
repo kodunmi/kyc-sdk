@@ -30,7 +30,7 @@ const PhoneVerification = () => {
         <div className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100">
           <Languages />
         </div>
-        <h2 className="kyc-text-2xl kyc-font-bold">Vesona</h2>
+        <h2 className="kyc-text-2xl kyc-font-bold">IDen3fy</h2>
         <div
           onClick={() => {}}
           className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100 kyc-cursor-pointer"
@@ -77,9 +77,9 @@ const PhoneVerification = () => {
               placeholder="enter you remail"
               className="kyc-border-2 !kyc-border-black !kyc-w-5/6 kyc-rounded-lg kyc-mt-8 kyc-py-0 kyc-px-2 kyc-mx-auto"
             /> */}
-            <div className="kyc-border-2 !kyc-border-black !kyc-w-5/6 kyc-rounded-lg kyc-mt-8 kyc-py-1  kyc-mx-auto">
+            <div className="kyc-border-2 !kyc-border-black !kyc-w-5/6 kyc-rounded-lg kyc-mt-8 kyc-py-1 kyc-px-2 kyc-mx-auto">
               <PhoneInputWithCountrySelect
-                className="kyc-py-1"
+                className="kyc-py-1 kyc-outline-none"
                 onChange={(e) => {
                   console.log(e);
                 }}

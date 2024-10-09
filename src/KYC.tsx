@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "./Modal";
 import { createRoot } from "react-dom/client";
+import RegisterModal from "./components/modals/Register";
 
 class KYC {
   private token: string;
@@ -37,6 +38,28 @@ class KYC {
         onRequestClose={closeModal}
         token={this.token}
         verificationToken={verificationToken}
+      />
+    );
+  }
+
+  register(): void {
+    this.portalRoot = this.createPortalRoot();
+    const root = createRoot(this.portalRoot);
+
+    const closeModal = () => {
+      if (this.portalRoot) {
+        root.unmount();
+        this.portalRoot;
+        document.body.removeChild(this.portalRoot);
+        this.portalRoot = null;
+      }
+    };
+
+    root.render(
+      <RegisterModal
+        isOpen={true}
+        onRequestClose={closeModal}
+        token={this.token}
       />
     );
   }

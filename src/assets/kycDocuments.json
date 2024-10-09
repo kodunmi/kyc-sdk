@@ -1,0 +1,21 @@
+{
+    "basic": [
+        "ID Card",
+        "Driver's license",
+        "Passport"
+    ],
+    "countries": {
+        "USA": [
+            "Social Security Number (SSN)"
+        ],
+        "UK": [
+            "National Insurance Number (NIN)"
+        ],
+        "Canada": [
+            "Health Insurance Card"
+        ],
+        "India": [
+            "Aadhaar Card"
+        ]
+    }
+}

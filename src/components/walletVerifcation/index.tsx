@@ -1,6 +1,7 @@
 import { ArrowBigLeft, ArrowLeft, Languages, X } from "lucide-react";
 import React, { useEffect, useMemo, useState } from "react";
 import Img from "../../assets/svgs/undraw_digital_currency_qpak.svg";
+import Logo from "../../assets/logo2.png";
 import Loader from "../../assets/svgs/Rolling@1x-0.4s-200px-200px.svg";
 import { Button } from "../ui/button";
 import {
@@ -323,7 +324,9 @@ const WalletConnectionComponent = () => {
           >
             <ArrowLeft />
           </div>
-          <h2 className="kyc-text-2xl kyc-font-bold">Vesona</h2>
+
+          {/* <h2 className="kyc-text-2xl kyc-font-bold">iDen3fy</h2> */}
+          <img className="kyc-h-14" src={Logo} alt="" />
           <div
             onClick={() => {}}
             className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100 kyc-cursor-pointer"

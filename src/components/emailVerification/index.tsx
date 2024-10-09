@@ -29,7 +29,7 @@ const EmailVerification = () => {
         <div className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100">
           <Languages />
         </div>
-        <h2 className="kyc-text-2xl kyc-font-bold">Vesona</h2>
+        <h2 className="kyc-text-2xl kyc-font-bold">IDen3fy</h2>
         <div
           onClick={() => {}}
           className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100 kyc-cursor-pointer"

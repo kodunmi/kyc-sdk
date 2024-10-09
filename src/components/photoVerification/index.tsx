@@ -280,7 +280,7 @@ const ImageCapture: React.FC = () => {
             <div className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100">
               <Languages size={24} />
             </div>
-            <h2 className="kyc-text-2xl kyc-font-bold">Vesona</h2>
+            <h2 className="kyc-text-2xl kyc-font-bold">IDen3fy</h2>
             <div
               onClick={() => {}}
               className="kyc-rounded-full kyc-p-2 kyc-bg-gray-100 kyc-cursor-pointer"
@@ -363,11 +363,11 @@ const ImageCapture: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="kyc-relative">
+            <div className="kyc-relative kyc-h-full">
               <img
                 src={imageSrc || undefined}
                 alt="Captured"
-                className="kyc-h-full kyc-w-full kyc-object-contain"
+                className="kyc-h-full kyc-w-full kyc-object-cover"
               />
               <div className="kyc-absolute kyc-bottom-4 kyc-left-0 kyc-right-0 kyc-flex kyc-justify-center kyc-space-x-4">
                 <button
